@@ -3,6 +3,8 @@
 * Use the below command to publish the artifact to local maven repository.
 *
 * ../gradlew uploadArchives
+* 
+* Note the above command would work on Mac or Linux. It could vary on a Windows system.
 */
 
 apply plugin: 'maven'

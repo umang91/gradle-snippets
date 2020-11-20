@@ -1,0 +1,25 @@
+/**
+* Gradle task for generating java doc for multi module android library project.
+* Add the task in the root level build.gradle file.
+*/
+
+task aggregateJavaDocTask(type: Javadoc){
+  failOnError = false
+  // getting project root
+  Project rootProject = project.rootProject
+  // filtering out android modules
+  Set<Project> androidLibraryProjects = rootProject.subprojects.findAll { subProject -> subProject.plugins.hasPlugin(
+      LibraryPlugin) }
+  // setting source for document generation
+  source androidLibraryProjects.javadoc.source
+  // task description
+  description = 'Aggregates Javadoc API documentation of all subprojects.'
+  // task group
+  group = JavaBasePlugin.DOCUMENTATION_GROUP
+  // access specifier of methods
+  options.memberLevel = JavadocMemberLevel.PUBLIC
+  // inlcude specific class
+  //  include("**/<filename>.java")
+  // location for generated documentation
+  destinationDir rootProject.file("./docs")
+}
