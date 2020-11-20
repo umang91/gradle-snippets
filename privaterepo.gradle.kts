@@ -3,7 +3,7 @@
 */
 
 repositories {
-    maven(url="<maven_url>"){
+    maven(url="<maven_url>") {
         credentials {
             username="<username>"
             password="<API_KEY>"

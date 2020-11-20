@@ -1,0 +1,20 @@
+/**
+* Below snippet is required to publish a library to the local repoistory of your System.
+* Use the below command to publish the artifact to local maven repository.
+*
+* ../gradlew uploadArchives
+*/
+
+apply plugin: 'maven'
+
+group = '<library_group>'
+version = '<library_version>'
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: mavenLocal().getUrl())
+    }
+  }
+}
+
