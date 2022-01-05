@@ -1,5 +1,9 @@
 /**
  * Skeleton script for buidling and publishing version catalog.
+ *
+ * Publishing commands 
+ * Local Publish - ./gradlew publishToMavenLocal
+ * Publish to Maven Central - ./gradlew publish
  */
 plugins {
     // plugin for genrating catalog
