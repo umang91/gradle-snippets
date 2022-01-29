@@ -59,7 +59,7 @@ publishing {
                 }
                 scm {
                     // version control meta data
-                    connection.set("scm:git:git://example.com/my-library.git")
+                    connection.set("scm:ßgit://example.com/my-library.git")
                     developerConnection.set("scm:git:ssh://example.com/my-library.git")
                     url.set("http://example.com/my-library/")
                 }
