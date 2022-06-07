@@ -73,7 +73,13 @@ publishing {
                     password=mavenCentralRepositoryPassword
                 }
                 // publishing url for sonatype
-                url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+                url = if(libVersion.endsWith("-SNAPSHOT")) {
+                    // upload a snapshot build
+                    uri("https://oss.sonatype.org/content/repositories/snapshots/")
+                }  else {
+                    // upload a build for release.
+                    uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+                }
             }
         }
     }
